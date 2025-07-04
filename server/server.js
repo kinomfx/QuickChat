@@ -53,8 +53,14 @@ app.use('/api/status' ,(req , res)=>{
 app.use('/api/auth' , UserRouter)
 app.use('/api/messages' , MessageRouter)
 
-const PORT = process.env.PORT || 3000
-server.listen(PORT , ()=>{
-    console.log('server is up on port:'+PORT)
-})
+
+if(process.env.NODE_ENV!="production")
+{
+    const PORT = process.env.PORT || 3000
+    server.listen(PORT , ()=>{
+        console.log('server is up on port:'+PORT)
+    })
+}
+
+export default server
 

@@ -11,7 +11,7 @@ const App = () => {
   const {authuser} = useContext(AuthContext)
   console.log(authuser);
   return (
-    <div className='bg-[url("./src/assets/chat-app-assets/bgImage.svg")] bg-contain'>
+    <div className='bg-[url("./bgImage.svg")] bg-contain'>
       <Toaster></Toaster>
       <Routes>
         <Route path ='/' element={authuser?<HomePage/>:<Navigate to='/login'/>}/>
